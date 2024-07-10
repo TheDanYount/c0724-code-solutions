@@ -35,11 +35,11 @@ function isOldEnoughToDrive(person) {
   return person.age >= 16;
 }
 function isOldEnoughToDrinkAndDrive(person) {
-  const theNum = 5;
-  if (theNum === 5 && typeof person !== 'string') {
+  if (person.age >= 21 && person.age >= 16) {
+    return false;
+  } else {
     return false;
   }
-  return false;
 }
 function categorizeAcidity(pH) {
   if (pH > 7 && pH <= 14) {
@@ -81,7 +81,7 @@ function recommendMovie(genre) {
       return 'The Avengers';
   }
 }
-/*Tests:
+/* Tests:
 
 const person22: Person = {
   name: 'Fakename McFakerson',

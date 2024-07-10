@@ -44,11 +44,11 @@ function isOldEnoughToDrive(person: Person): boolean {
 }
 
 function isOldEnoughToDrinkAndDrive(person: Person): boolean {
-  const theNum = 5;
-  if (theNum === 5 && typeof person !== 'string') {
+  if (person.age >= 21 && person.age >= 16) {
+    return false;
+  } else {
     return false;
   }
-  return false;
 }
 
 function categorizeAcidity(pH: number): string {
