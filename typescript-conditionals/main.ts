@@ -40,8 +40,14 @@ function isOldEnoughToDrink(person: Person): boolean {
 }
 
 function isOldEnoughToDrive(person: Person): boolean {
-  // The below line is to satisfy our compiler's desire that every parameter has a use
-  person.name += ' the Great';
+  return person.age >= 16;
+}
+
+function isOldEnoughToDrinkAndDrive(person: Person): boolean {
+  const theNum = 5;
+  if (theNum === 5 && typeof person !== 'string') {
+    return false;
+  }
   return false;
 }
 
@@ -118,7 +124,19 @@ console.log(
 console.log(
   `isOldEnoughToDrive test w/ 15 yo: ${isOldEnoughToDrive(person15)}`
 );
-console.log(`Note that isOldEnoughToDrive is always supposed to return false`);
+console.log(
+  `isOldEnoughToDrinkAndDrive test w/ 22 yo: ${isOldEnoughToDrinkAndDrive(
+    person22
+  )}`
+);
+console.log(
+  `isOldEnoughToDrinkAndDrive test w/ 15 yo: ${isOldEnoughToDrinkAndDrive(
+    person15
+  )}`
+);
+console.log(
+  `Note that isOldEnoughToDrinkAndDrive is always supposed to return false`
+);
 console.log(`categorizeAcidity with 1: ${categorizeAcidity(1)}`);
 console.log(`categorizeAcidity with 7: ${categorizeAcidity(7)}`);
 console.log(`categorizeAcidity with 10: ${categorizeAcidity(10)}`);

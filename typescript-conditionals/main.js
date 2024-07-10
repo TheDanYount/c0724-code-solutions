@@ -32,6 +32,13 @@ function isOldEnoughToDrink(person) {
   return person.age >= 21;
 }
 function isOldEnoughToDrive(person) {
+  return person.age >= 16;
+}
+function isOldEnoughToDrinkAndDrive(person) {
+  const theNum = 5;
+  if (theNum === 5 && typeof person !== 'string') {
+    return false;
+  }
   return false;
 }
 function categorizeAcidity(pH) {
@@ -74,15 +81,17 @@ function recommendMovie(genre) {
       return 'The Avengers';
   }
 }
-const person22 = {
+/*Tests:
+
+const person22: Person = {
   name: 'Fakename McFakerson',
   age: 22,
 };
-const person15 = {
+
+const person15: Person = {
   name: 'Falsename McFalserson',
   age: 15,
 };
-/* Tests:
 
 console.log(`isUnderFive test w/ 4: ${isUnderFive(4)}`);
 console.log(`isUnderFive test w/ 6: ${isUnderFive(6)}`);
@@ -102,7 +111,19 @@ console.log(
 console.log(
   `isOldEnoughToDrive test w/ 15 yo: ${isOldEnoughToDrive(person15)}`
 );
-console.log(`Note that isOldEnoughToDrive is always supposed to return false`);
+console.log(
+  `isOldEnoughToDrinkAndDrive test w/ 22 yo: ${isOldEnoughToDrinkAndDrive(
+    person22
+  )}`
+);
+console.log(
+  `isOldEnoughToDrinkAndDrive test w/ 15 yo: ${isOldEnoughToDrinkAndDrive(
+    person15
+  )}`
+);
+console.log(
+  `Note that isOldEnoughToDrinkAndDrive is always supposed to return false`
+);
 console.log(`categorizeAcidity with 1: ${categorizeAcidity(1)}`);
 console.log(`categorizeAcidity with 7: ${categorizeAcidity(7)}`);
 console.log(`categorizeAcidity with 10: ${categorizeAcidity(10)}`);
