@@ -70,7 +70,7 @@ function doubleAll(numbers: number[]): number[] {
 }
 
 console.log(
-  'doubleAll tests for 1-3, 3-0, and 5:',
+  'doubleAll tests for 1-3, 3-1, and 5:',
   doubleAll([1, 2, 3]),
   doubleAll([3, 2, 1]),
   doubleAll([5])
