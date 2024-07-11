@@ -1,6 +1,7 @@
+'use strict';
 /* exported getKeys */
-function getKeys(object: Record<string, unknown>): string[] {
-  const newArr: string[] = [];
+function getKeys(object) {
+  const newArr = [];
   for (const key in object) {
     newArr.push(key);
   }
