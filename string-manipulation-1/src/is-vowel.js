@@ -1,5 +1,6 @@
+'use strict';
 /* exported isVowel */
-function isVowel(char: string): boolean {
+function isVowel(char) {
   const cappedChar = char.toUpperCase();
   switch (cappedChar) {
     case 'A':

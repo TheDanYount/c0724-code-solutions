@@ -1,4 +1,5 @@
+'use strict';
 /* exported isLowerCased */
-function isLowerCased(word: string): boolean {
+function isLowerCased(word) {
   return word.toLowerCase() === word;
 }

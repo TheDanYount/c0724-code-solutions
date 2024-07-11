@@ -1,4 +1,5 @@
+'use strict';
 /* exported isUpperCased */
-function isUpperCased(word: string): boolean {
+function isUpperCased(word) {
   return word.toUpperCase() === word;
 }
