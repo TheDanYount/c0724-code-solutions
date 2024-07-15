@@ -3,7 +3,7 @@
 Define a function with 2 params: target, an object, and source, an object, and no return
 Loop through the properties of source
 If such a property is not found on target
-Add the property
+Add the  property
 */
 function defaults(
   target: Record<string, unknown>,
