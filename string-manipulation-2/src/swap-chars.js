@@ -1,6 +1,6 @@
 'use strict';
 /* exported swapChars */
-/*Pseudo-code practice:
+/* Pseudo-code practice:
 Define a function, swapChars, with 3 parameters: number, number, string, that returns a string
 Declare and initialize a new string
 Create a for loop to iterate a number of times equal to the string argument's length

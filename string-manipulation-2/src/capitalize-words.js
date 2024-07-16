@@ -1,7 +1,7 @@
 'use strict';
 /* exported capitalizeWords */
 function capitalizeWords(string) {
-  //If string is blank
+  // If string is blank
   if (string === '') {
     return '';
   } else {
