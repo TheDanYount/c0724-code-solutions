@@ -1,6 +1,5 @@
-'use strict';
 /* exported capitalizeWords */
-function capitalizeWords(string) {
+function capitalizeWords(string: string): string {
   let lastChar = '';
   let newStr = '';
   for (let i = 0; i < string.length; i++) {
