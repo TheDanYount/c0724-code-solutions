@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Tangerine, cursive;
+  text-shadow: 2px 2px 6px #0a0a40;
+}
+
+section {
+  padding: 1.5rem 0;
+  background-color: #e1f1ff;
+}
+
+h2 {
+  margin-bottom: 3.5rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+form {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+input,
+button {
+  height: 3rem;
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+input {
+  width: 400px;
+  padding: 0.5rem;
+  border: 1px solid;
+  border-color: #ededed;
+  font-weight: 300;
+}
+
+button {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-left: 0.25rem;
+  border: none;
+  border-color: #ededed;
+  font-weight: 500;
+  background-color: chartreuse;
+  color: #fff;
+}
