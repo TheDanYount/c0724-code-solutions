@@ -11,7 +11,7 @@ Answer the following questions in the provided markdown file before turning in t
 - What are the three primary components of a page layout? (Which helper classes do you need?)
   Container, row, and column.
 - What is the minimum number of **columns** that you should put in a **row**?
-  Two.
+  One.
 - What is the purpose of a **container**?
   To separate content from a background.
 
