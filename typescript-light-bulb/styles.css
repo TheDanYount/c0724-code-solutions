@@ -1,0 +1,32 @@
+.background {
+  background-color: black;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.background-off {
+  background-color: black;
+}
+
+.background-on {
+  background-color: rgb(255, 250, 230);
+}
+
+.bulb {
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+}
+
+.bulb-off {
+  background-color: rgb(25, 25, 25);
+  box-shadow: -10px -10px 10px 0 rgba(25, 25, 25, 100%);
+}
+
+.bulb-on {
+  background-color: rgb(255, 216, 0);
+  box-shadow: 0 0 25px 30px rgba(255, 216, 0, 37.5%);
+}
