@@ -1,18 +1,18 @@
 'use strict';
 const $bulb = document.querySelector('.bulb');
 const $background = document.querySelector('.background');
-let lightStatus = 'off';
+let lightOn = false;
 if (!$bulb) throw new Error('Someone had better hurry over to Home Depot!');
 $bulb.addEventListener('click', clickHandler);
 function clickHandler() {
   if (!$bulb) throw new Error('Someone had better hurry over to Home Depot!');
   if (!$background) throw new Error("You're off the map!");
-  if (lightStatus === 'off') {
-    lightStatus = 'on';
+  if (lightOn === false) {
+    lightOn = true;
     $bulb.className = 'bulb bulb-on';
     $background.className = 'background background-on';
   } else {
-    lightStatus = 'off';
+    lightOn = false;
     $bulb.className = 'bulb bulb-off';
     $background.className = 'background background-off';
   }
