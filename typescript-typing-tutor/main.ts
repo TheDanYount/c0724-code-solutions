@@ -12,6 +12,7 @@ let currentSentenceIndex: number;
 let done = false;
 const completedArray: number[] = [];
 const lotrQuotePositions = [0, 1, 2];
+let time = 0;
 let currentPlace = 0;
 let accurateInputs = 0;
 let inaccurateInputs = 0;
@@ -31,6 +32,7 @@ const $error = document.querySelector('.error');
 const $palimpsest = document.querySelector('.palimpsest');
 const $accuracy = document.querySelector('#accuracy');
 const $reset = document.querySelector('#reset') as HTMLDialogElement;
+const $timer = document.querySelector('#timer');
 const $lotrAward = document.querySelector('.lotr');
 
 function setUp(): void {
@@ -47,6 +49,8 @@ function setUp(): void {
   $accuracy.textContent = '';
   accurateInputs = 0;
   inaccurateInputs = 0;
+  time = 0;
+  setInterval(adjustTimer, 1000);
 }
 
 setUp();
@@ -118,4 +122,14 @@ function addAwards(): void {
     if (!$lotrAward) throw new Error('$lotrAward note found!');
     $lotrAward.className = 'award-column lotr';
   }
+}
+
+function adjustTimer(): void {
+  if (!$timer) throw new Error('$timer not found!');
+  let seconds: string = String(time % 60);
+  if (time % 60 < 10) {
+    seconds = 0 + String(time % 60);
+  }
+  $timer.textContent = `${Math.floor(time / 60)}:${seconds}`;
+  time++;
 }

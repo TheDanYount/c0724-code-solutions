@@ -12,6 +12,7 @@ body {
 
 .statistics {
   flex: 0 0 20vh;
+  gap: 20px;
 }
 
 .row {
@@ -23,6 +24,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.award-box {
+  flex-basis: 340px;
 }
 
 .award-column {
