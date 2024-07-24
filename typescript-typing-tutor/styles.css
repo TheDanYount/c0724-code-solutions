@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  flex: 0 0 80vw;
+}
+
+.container span {
+  font-size: 32px;
+  font-family: sans-serif;
+}
+
+.yeomans-work {
+  color: rgb(0, 255, 0);
+}
+
+.quill-tip {
+  text-decoration: underline;
+}
+
+.error {
+  color: rgb(255, 0, 0);
+  text-decoration: underline;
+}
