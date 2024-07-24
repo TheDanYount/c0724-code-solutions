@@ -9,6 +9,8 @@ const sentences = [
 ];
 let currentSentence: string;
 let done = false;
+// const completedArray = [];
+// const lotrQuotePositions = [0, 1, 2];
 let currentPlace = 0;
 let accurateInputs = 0;
 let inaccurateInputs = 0;

@@ -14,15 +14,38 @@ body {
   flex: 0 0 20vh;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
 .full-column {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.award-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .container span {
   font-size: 24px;
   font-family: sans-serif;
+}
+
+.award > h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.award > img {
+  width: 100px;
 }
 
 .yeomans-work {
@@ -36,4 +59,8 @@ body {
 .error {
   color: rgb(255, 0, 0);
   text-decoration: underline;
+}
+
+.hidden {
+  display: none;
 }
