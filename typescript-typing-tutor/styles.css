@@ -37,6 +37,22 @@ body {
   font-family: sans-serif;
 }
 
+#reset {
+  font-size: 24px;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#reset p {
+  margin: 0;
+}
+
+.paren-text {
+  font-size: 16px;
+}
+
 .award > h3 {
   text-align: center;
   font-size: 16px;
