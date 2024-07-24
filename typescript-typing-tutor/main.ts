@@ -5,10 +5,13 @@ const sentences = [
   /* `Hi`,
   `Hi`,
   `Hi`,
-  `Hi`, --these are to make testing easier */
+  `Hi`  --these are to make testing easier */
 ];
 let currentSentence: string;
+let currentSentenceIndex: number;
 let done = false;
+const completedArray: number[] = [];
+const lotrQuotePositions = [0, 1, 2];
 let currentPlace = 0;
 let accurateInputs = 0;
 let inaccurateInputs = 0;
@@ -28,9 +31,11 @@ const $error = document.querySelector('.error');
 const $palimpsest = document.querySelector('.palimpsest');
 const $accuracy = document.querySelector('#accuracy');
 const $reset = document.querySelector('#reset') as HTMLDialogElement;
+const $lotrAward = document.querySelector('.lotr');
 
 function setUp(): void {
-  currentSentence = sentences[Math.floor(Math.random() * sentences.length)];
+  currentSentenceIndex = Math.floor(Math.random() * sentences.length);
+  currentSentence = sentences[currentSentenceIndex];
   currentPlace = 0;
   if (!$yeomansWork) throw new Error('$yeomansWork is missing!');
   $yeomansWork.textContent = '';
@@ -91,5 +96,26 @@ function updateAccuracy(): void {
 
 function reset(): void {
   done = false;
+  if (
+    Math.round((accurateInputs / (inaccurateInputs + accurateInputs)) * 100) >=
+      95 &&
+    !completedArray.includes(currentSentenceIndex)
+  ) {
+    completedArray.push(currentSentenceIndex);
+  }
+  addAwards();
   setUp();
+}
+
+function addAwards(): void {
+  let lotrMatches = 0;
+  for (let i = 0; i < lotrQuotePositions.length; i++) {
+    if (completedArray.includes(lotrQuotePositions[i])) lotrMatches++;
+  }
+  console.log('lQP.length:', lotrQuotePositions.length);
+  console.log('lotrMatches:', lotrMatches);
+  if (lotrMatches === lotrQuotePositions.length) {
+    if (!$lotrAward) throw new Error('$lotrAward note found!');
+    $lotrAward.className = 'award-column lotr';
+  }
 }
