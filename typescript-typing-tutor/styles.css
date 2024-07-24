@@ -3,15 +3,25 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .container {
+  margin-top: 20vh;
   flex: 0 0 80vw;
 }
 
+.statistics {
+  flex: 0 0 20vh;
+}
+
+.full-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .container span {
-  font-size: 32px;
+  font-size: 24px;
   font-family: sans-serif;
 }
 
