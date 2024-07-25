@@ -7,23 +7,21 @@ $tabContainer.addEventListener('click', clickHandler);
 function clickHandler(event: Event): void {
   const eventTarget = event.target as HTMLElement;
   if (!eventTarget.matches('.tab')) {
-    // console.log('Tab not clicked.');
-  } else {
-    for (const tab of $tabClassNodeList) {
-      if (tab === eventTarget) {
-        tab.className = 'tab active';
-      } else {
-        tab.className = 'tab';
-      }
+    return;
+  }
+  for (const tab of $tabClassNodeList) {
+    if (tab === eventTarget) {
+      tab.className = 'tab active';
+    } else {
+      tab.className = 'tab';
     }
-    for (const view of $viewClassNodeList) {
-      if (!(view instanceof HTMLElement))
-        throw new Error('view not HTMLElement');
-      if (view.dataset.view === eventTarget.dataset.view) {
-        view.className = 'view';
-      } else {
-        view.className = 'view hidden';
-      }
+  }
+  for (const view of $viewClassNodeList) {
+    if (!(view instanceof HTMLElement)) throw new Error('view not HTMLElement');
+    if (view.dataset.view === eventTarget.dataset.view) {
+      view.className = 'view';
+    } else {
+      view.className = 'view hidden';
     }
   }
 }
