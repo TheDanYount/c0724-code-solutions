@@ -7,8 +7,7 @@ $tabContainer.addEventListener('click', clickHandler);
 function clickHandler(event) {
   const eventTarget = event.target;
   if (!eventTarget.matches('.tab')) {
-    console.log('Tab not clicked.');
-    return;
+    //console.log('Tab not clicked.');
   } else {
     for (const tab of $tabClassNodeList) {
       if (tab === eventTarget) {
