@@ -1,0 +1,40 @@
+# css-responsive-layout-quiz-notes
+
+## Quiz Questions
+
+Answer the following questions in the provided markdown file before turning in this exercise:
+
+- What is a **breakpoint** in responsive Web design?
+  A point at which the rules governing the webpage's design change i.e. if you have a @media (min-width: 600px) encapsulating a css ruleset, that rule will only go into affect if the webpage is >600px wide, making 600px the breakpoint.
+- What is the advantage of using a percentage (_e.g._ `50%`) width instead of a fixed (_e.g._ `px`) width for a "column" class in a responsive layout?
+  The ratio of sizes of elements on a webpage will stay constant if you use percentages. If you use fixed width, you'll simply be filling your webpage with unused space as the display width changes.
+- If you introduce CSS rules for a smaller `min-width` _after_ the styles for a larger `min-width` in your style sheet, the CSS rules for the **smaller** `min-width` will "win". Why is that?
+  Because of source order and because the statements overlap i.e. the set of displays with >800px width is fully contained within the set of displays with >500px width. Another, albeit odd, way to do this would be to use multiple selectors, one for min-width of 500px and one for max-width of 800px, but this is needless if you just take proper advantage of source order.
+
+## Notes
+
+All student notes should be written here.
+
+How to write `Code Examples` in markdown
+
+for JS:
+
+```javascript
+const data = 'Howdy';
+```
+
+for HTML:
+
+```html
+<div>
+  <p>This is text content</p>
+</div>
+```
+
+for CSS:
+
+```css
+div {
+  width: 100%;
+}
+```
