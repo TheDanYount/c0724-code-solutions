@@ -14,7 +14,7 @@ Answer the following questions in the provided markdown file before turning in t
   const [x,y,z] = array.
 
 - How can you tell the difference between destructuring and creating `Object`/`Array` literals?
-  Array deconstructions use brackets, like arrays; object deconstructions use curly braces, like objects.
+  Array creation/destructuring uses brackets, object creation/destructuring uses curly braces. Creation has the brackets/curly braces on the right side of the assignment operator, destructuring has the brackets/curly braces on the left side of the assignment operator.
 
 ## Notes
 
