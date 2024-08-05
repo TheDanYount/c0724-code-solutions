@@ -1,16 +1,14 @@
 const $message = document.querySelector('h1');
+let count = 4;
 
 function countDown(): void {
+  count--;
   if (!$message) throw new Error('$message not found!');
-  if (!($message.textContent === null)) {
-    if ($message.textContent.match(/\d+/)) {
-      if ($message.textContent === '0') {
-        $message.textContent = '~Earth Beeeelooowww Us~';
-        clearInterval(theCountDown);
-      } else {
-        $message.textContent = String(Number($message.textContent) - 1);
-      }
-    }
+  if (count === 0) {
+    $message.textContent = '~Earth Beeeelooowww Us~';
+    clearInterval(theCountDown);
+  } else {
+    $message.textContent = String(count);
   }
 }
 
