@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript Carousel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="layouts.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="column-full align-items-center">
+        <div class="row align-items-center" id="main-row">
+          <i class="fa-solid fa-chevron-left chevron"></i>
+          <div id="frame">
+            <img id="current-img" src="./images/001.png" />
+          </div>
+          <i class="fa-solid fa-chevron-right chevron"></i>
+        </div>
+        <div class="row" id="indicators">
+          <i class="fa-solid fa-circle" data-pos="1"></i>
+          <i class="fa-regular fa-circle" data-pos="2"></i>
+          <i class="fa-regular fa-circle" data-pos="3"></i>
+          <i class="fa-regular fa-circle" data-pos="4"></i>
+          <i class="fa-regular fa-circle" data-pos="5"></i>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
