@@ -1,0 +1,500 @@
+  112  npx tsc
+  113  npx tsc
+  114  npx tsc
+  115  git add .
+  116  git commit -m"Added interfaces for Entry[s], Data, and JournalEntryPieces, querried the form, added an event listener, prevented the default submit protocols from running, threw an error if the form wasn't found, formatted the submission, added the submission to the entries array of the data object, incremented the nextEntryId property of the data object, and reset the form"
+  117  npx tsc
+  118  git add .
+  119  git commit -m"Created functionality for the 'submit' event"
+  120  npx tsc
+  121  npx tsc
+  122  npx tsc
+  123  npx tsc
+  124  npx tsc
+  125  git add .
+  126  git status
+  127  git commit -m"Added localStorage storing/retrieval functions"
+  128  npx tsc
+  129  git status
+  130  git add .
+  131  git status
+  132  git commit -m"Stored data once changed; retrieved data once page loads"
+  133  npx tsc
+  134  npx tsc
+  135  npx tsc
+  136  npx tsc
+  137  npx tsc
+  138  npx tc
+  139  npx tsc
+  140  npx tsc
+  141  npx tsc
+  142  git add .
+  143  git commit -m"Added CSS for focus and input changed"
+  144  npx tsc
+  145  git add .
+  146  git status
+  147  git commit -m"Added CSS for user interaction" -m"Input/textarea border now changes on focus; input now changes background color once it fires of input events; also added a reset for input background colors when the user resets the form."
+  148  git push origin issue-1-create-an-entry
+  149  git add .
+  150  git status
+  151  git commit -m"Re-ordered CSS file" -m"Moved media queries to the end of the CSS file"
+  152  git push origin issue-1-create-an-entry
+  153  git switch main
+  154  git pull origin main
+  155  git branch issue-2-view-an-entry
+  156  git switch issue-2-view-an-entry
+  157  git add .
+  158  git status
+  159  git commit -m"Added dummy entries #2" -m"Put entries in a hidden div, in a ul, and in li -s. Removed padding from the ul and the list-style-type from the li -s. Tested entries (by removing the hidden class) for mobile and desktop."
+  160  npx tsc
+  161  npx tsc
+  162  npx tsc
+  163  npx tsc
+  164  npx tsc
+  165  npx tsc
+  166  npx tsc
+  167  npx tsc
+  168  git add .
+  169  git status
+  170  git commit -m"Created renderEntry function #2" -m"renderEntry() takes in an entry (presumably fetched from the entries property (an array) of the return of the retrieveData function and creates a journal entry. I tested this by appending its return to the hidden div with the data-view="entries" property, loading the page, and removing the hidden class."
+  171  npx tsc
+  172  git add .
+  173  git commit -m"Created renderEntry function" -m"renderEntry receives an Entry and constructs HTML elements to display that entry. The parent of the HTML elements is returned. Tested (though I've removed the test)."
+  174  npx tsc
+  175  git add .
+  176  git commit -m"Added renderEntry function" -m"renderEntry() takes an Entry and returns a parent HTML element of a journal entry created with an image, a title, and text, formatted as to appear properly on mobile and on desktop."
+  177  npx tsc
+  178  npx tsc
+  179  git add .
+  180  git status
+  181  npx tsc
+  182  npx tsc
+  183  npx tsc
+  184  npx tsc
+  185  npx tsc
+  186  npx tsc
+  187  npx tsc
+  188  npx tsc
+  189  npx tsc
+  190  npx tsc
+  191  npx tsc
+  192  git add .
+  193  git commit -m"Finished adding entries on page load" -m"When DomContentLoaded fires an event, each entry is generated. If there is at least 1, a message saying there are no entries is hidden via the new toggleNoEntries function."
+  194  git add .
+  195  git commit -m"Finished loading entries on page load" -m"When DOMContentLoaded fires, each entry is loaded. If at least 1 has loaded, a message saying "No entries..." is hidden via the new toggleNoEntries function."
+  196  clear
+  197  npx tsc --watch
+  198  git add .
+  199  git commit -m"Created viewSwap function #2" -m"viewSwap hides every container that doesn't match the string that gets passed to it as an argument, and ensures the container that does match it is shown"
+  200  git add .
+  201  git commit -m"Added viewSwap function #2" "viewSwap hides every container without a matching data-view to the string that's its parameter, and shows the one that does match. Currently I explicitly define all of the containers, but I might use a nodeList from querySelectorAll for children of the main w/ class container."
+  202  npx tsc
+  203  npx tsc
+  204  npx tsc
+  205  npx tsc
+  206  npx tsc
+  207  npx tsc
+  208  npx tsc
+  209  npx tsc
+  210  npx tsc
+  211  npx tsc
+  212  npx tsc
+  213  npx tsc
+  214  npx tsc
+  215  npx tsc
+  216  npx tsc
+  217  git add .
+  218  git status
+  219  npx tsc
+  220  npx tsc
+  221  npx tsc
+  222  npx tsc
+  223  npx tsc
+  224  npx tsc
+  225  git add .
+  226  git commit -m"Finalized view swapping #2" -m"Added title to entries view, changed some CSS, added button in the navbar to change to entries view, and made sure that view swapping/page loading show the correct view"
+  227  git push origin issue-2-view-an-entry
+  228  npx tsc
+  229  git add .
+  230  npx tsc
+  231  git add .
+  232  git add .
+  233  npx tsc
+  234  git add .
+  235  git commit -m"Polish #2" -m"Redundancies are now combined in one function, views start as hidden until the js loads one (chosen from the view on the data object), non-layout classes were moved into styles.css, and I use add/remove rather than toggle in my viewSwap function."
+  236  git push origin issue-2-view-an-entry
+  237  npx tsc
+  238  npx tsc
+  239  git add .
+  240  git commit -m"Added functionality to 'NEW' button"
+  241  git commit --amend -m"Added functionality to 'NEW' button #2" -m"Also threw the top elements in the entries view (the title and the button) into a column so they'd have the padding they ought to"
+  242  git push origin issue-2-view-an-entry
+  243  touch dummy.html
+  244  touch styles.css
+  245  git switch main
+  246  git pull origin main
+  247  git branch issue-3-edit-an-entry
+  248  git switch issue-3-edit-an-entry
+  249  npx tsc
+  250  npx tsc
+  251  npx tsc
+  252  npx tsc
+  253  npx tsc
+  254  npx tsc
+  255  npx tsc
+  256  npx tsc
+  257  npx tsc
+  258  npx tsc
+  259  npx tsc
+  260  npx tsc
+  261  npx tsc
+  262  npx tsc
+  263  npx tsc
+  264  npx tsc
+  265  npx tsc
+  266  npx tsc
+  267  npx tsc
+  268  npx tsc
+  269  npx tsc
+  270  npx tsc
+  271  npx tsc
+  272  npx tsc
+  273  npx tsc
+  274  git add .
+  275  git commit -m"Test"
+  276  git commit --amend -m"Made functionality for entries to open edit mode" -m"Entries now have a working button (an <i> pencil icon). When clicked, it switches the view to entry-form, re-titles that view to Edit Entry, populates the form with the entry's data, and previews the imgUrl's img, and stores the entry in data.editing."
+  277  git commit --amend -m"Made functionality for entries to open edit mode #3" -m"Entries now have a working button (an <i> pencil icon). When clicked, it switches the vewi to entry-form, re-titles that view to 'Edit Entry', populates the form with the entry's data, and previews the imgUrl's img, and stores the entry in data.editing."
+  278  npx tsc
+  279  npx tsc
+  280  npx tsc
+  281  npx tsc
+  282  git add .
+  283  git commit -m"Test"
+  284  git commit --amend -m"Edited entries can now be submitted" -m"Edited entries replace their former versions in both data and the DOM. Submit still view swaps. data.editing properly switches on/off."
+  285  git commit --amend -m"Edited entries can now be submitted #3" -m"Edited entries replace their former versions in both data and the DOM. Submit still view swaps. data.editing properly switches on/off."
+  286  git push origin issue-3-edit-an-entry
+  287  npx tsc
+  288  git add .
+  289  git commit -m"Polish" -m"Removed redundancies, turned a regular if statement into a guard clause at an appropriate place, and did a better job naming a parameter."
+  290  git commit --amend -m"Polish #3" -m"Removed redundancies, turned a regualr if statement into a guard clause at an appropriate place, and re-named a poorly-named parameter."
+  291  git push origin issue-3-edit-an-entry
+  292  git switch origin main
+  293  git pull origin main
+  294  git switch main
+  295  git pull origin main
+  296  git branch issue-4-delete-an-entry
+  297  git switch issue-4-delete-an-entry
+  298  npx tsc
+  299  npx tsc
+  300  npx tsc
+  301  npx tsc
+  302  npx tsc
+  303  add .
+  304  git add .
+  305  git commit -m"Test"
+  306  git add .
+  307  git commit -m"Test"
+  308  git commit --amend -m"Styled delete elements #4" -m"This was a little complex. Not only did it include HTML and CSS, but I have a button at the right of a row that I want to switch to space-between when the "Delete Entry" button is visible (when editing), so it involved some js as well, both to toggle "hidden" for the button and to toggle the row's layout class."
+  309  git commit --amend -m"Styled delete elements #4" -m"This was a 
+  310  little complex. Not only did it include HTML and CSS, but I have a button at the right of a row that I want to switc
+  311  h to space-between when the 'Delete Entry' button is visible (when editing), so it involved some js as well, both to
+  312   toggle "hidden" for the button and to toggle the row's layout class."
+  313  clear
+  314  npx tsc
+  315  npx tsc
+  316  npx tsc
+  317  npx tsc
+  318  npx tsc
+  319  npx tsc
+  320  npx tsc
+  321  npx tsc
+  322  npx tsc
+  323  npx tsc
+  324  npx tsc
+  325  clear
+  326  npx tsc
+  327  npx tsc
+  328  npx tsc
+  329  npx tsc
+  330  npx tsc
+  331  npx tsc
+  332  npx tsc
+  333  clear
+  334  npx tsc
+  335  npx tsc
+  336  npx tsc
+  337  npx tsc
+  338  npx tsc
+  339  npx tsc
+  340  npx tsc
+  341  npx tsc
+  342  clear
+  343  npx tsc
+  344  npx tsc
+  345  npx tsc
+  346  npx tsc
+  347  npx tsc
+  348  npx tsc
+  349  npx tsc
+  350  npx tsc
+  351  clear
+  352  npx tsc
+  353  npx tsc
+  354  npx tsc
+  355  npx tsc
+  356  git log
+  357  git add .
+  358  git status
+  359  git commit -m"Added functionality to delete buttons #4" -m"In addition to deleting the correct entry from the DOM and the data model, I also ensured that the form properly refreshes as one creates a new form, edits, and or swaps to the entries view."
+  360  git add .
+  361  npx tsc
+  362  git add .
+  363  git commit -m"Added functionality to delete buttons #4" -m"In addition to deleting the correct entry from the DOM and the data model, I also ensured that the form properly refreshes as one creates a new form, edits, and/or swaps to the 'Entries' view."
+  364  npx tsc
+  365  git add .
+  366  git commit -m"Added functionality to delete buttons #4" -m"In addition to updating the DOM and the data model, I also ensured that the form properly refreshes on creation/editing/view swapping."
+  367  git push origin issue-4-delete-an-entry
+  368  git switch main
+  369  git pull origin main
+  370  git branch issue-5-polish
+  371  git switch issue-5-polish
+  372  npx tsc
+  373  npx tsc
+  374  npx tsc
+  375  npx tsc
+  376  npx tsc
+  377  npx tsc
+  378  clear
+  379  npx tsc
+  380  npx tsc
+  381  npx tsc
+  382  npx tsc
+  383  npx tsc
+  384  npx tsc
+  385  npx tsc
+  386  npx tsc
+  387  cd ..
+  388  git clone git@github.com:TheDanYount/week-planner.git
+  389  cd week-planner
+  390  npm install
+  391  nox audit fix
+  392  npx audit fix
+  393  git pull origin main
+  394  git branch issue-1-user-can-add-events
+  395  git switch issue-1-user-can-add-events
+  396  touch index.html
+  397  touch layouts.css
+  398  git log
+  399  git add .
+  400  git commit -m"Completed basic HTML and CSS"
+  401  git add .
+  402  git commit -m"Completed basic HTML and CSS #1"
+  403  git add .
+  404  git commit -m"Completed basic HTML and CSS #1"
+  405  git log
+  406  npx tsc
+  407  npx tsc
+  408  npx tsc --watch
+  409  git branch practice-interview-challenge
+  410  git switch practice-interview-challenge
+  411  cd practice-interview-challenge
+  412  touch index.html
+  413  touch main.ts
+  414  npx tsc
+  415  npx tsc --watch
+  416  git add .
+  417  git status
+  418  git commit -m"Completed the exerckse"
+  419  git push origin practice-interview-challenge
+  420  cd ..
+  421  git switch main
+  422  git pull origin main
+  423  git branch typescript-timers
+  424  git switch typescript-timers
+  425  cd typescript-timers
+  426  npx tsc --watch
+  427  npx tsc
+  428  cd ..
+  429  git add .
+  430  git status
+  431  git commit -m"Completed the exercise"
+  432  cd typescript-timers
+  433  npx tsc
+  434  npx tsc
+  435  git add .
+  436  git commit -"Test"
+  437  git commit -m"Test"
+  438  git add .
+  439  npx tsc
+  440  cd ..
+  441  cd typescript-timers
+  442  npx tsc
+  443  cd ..
+  444  git add .
+  445  git commit -m"Test"
+  446  npx tsc
+  447  cd typescript-timers
+  448  npx tsc
+  449  npx tsc
+  450  cd ..
+  451  git add .
+  452  git commit -m"Completed the exercise"
+  453  git push origin typescript-timers
+  454  npx tsc
+  455  git add .
+  456  git commit -m"Switched from query to varaible"
+  457  git push origin typescript-timers
+  458  git switch main
+  459  git pull origin main
+  460  git branch typescript-carousel
+  461  git switch typescript-carousel
+  462  cd typescript-carousel
+  463  touch layouts.css
+  464  npx tsc --watch
+  465  git add .
+  466  git status
+  467  git commit -m"Built a carousel"
+  468  npx tsc
+  469  git status
+  470  cd ..
+  471  git status
+  472  npx tsc
+  473  cd typescript-carousel
+  474  git add .
+  475  git status
+  476  git commit -m"Built a carousel"
+  477  git push origin typescript-carousel
+  478  cd ..
+  479  git switch main
+  480  git pull origin main
+  481  git branch typescript-destructuring
+  482  git switch typescript-destructuring
+  483  cd typescript-destructuring
+  484  touch index.html
+  485  touch main.ts
+  486  npx tsc --watch
+  487  git add .
+  488  git commit -m"Practiced object/array destructuring"
+  489  git add .
+  490  git commit -m"Completed the quiz"
+  491  cd ..
+  492  git push origin typescript-destructuring
+  493  git switch main
+  494  git pull origin main
+  495  git switch typescript-destructuring
+  496  git add .
+  497  git status
+  498  git commit -m"Corrected quiz question #4"
+  499  git push origin typescript-destructuring
+  500  npx tsc --watch
+  501  git switch main
+  502  git pull origin main
+  503  git branch typescript-operators
+  504  git switch typescript-operators
+  505  cd typesctipt-operators
+  506  npx tsc
+  507  cd typescript-operators
+  508  npx tsc
+  509  git add .
+  510  git status
+  511  cd ..
+  512  git status
+  513  git add .
+  514  git status
+  515  git commit -m"Completed the exercises"
+  516  git push origin typescript-operators
+  517  git switch main
+  518  git pull origin main
+  519  git branch array-methods
+  520  git switch array-methods
+  521  cd array-methods
+  522  npx tsc --watch
+  523  cd .
+  524  cd ..
+  525  git add .
+  526  git status
+  527  git add .
+  528  git add .
+  529  git commit -m"Completed the exercise"
+  530  cd array-methods
+  531  npx tsc
+  532  git add .
+  533  git status
+  534  git commit -m"Test"
+  535  git commit --amend -m"Completed the exercise"
+  536  cd ..
+  537  git push origin array-methods
+  538  git switch main
+  539  git pull origin main
+  540  git switch command-line-basics
+  541  git branch command-line-basics
+  542  git switch command-line-basics
+  543  man man
+  544  man rm
+  545  clear
+  546  cs command-line-basics
+  547  cs command-line-basics
+  548  clear
+  549  man man
+  550  man cat
+  551  cat laziness.text impatience.txt hubris.txt
+  552  clear
+  553  cd command-line-basics
+  554  man man
+  555  man cat
+  556  cat laziness.txt impatience.txt hubris.txt
+  557  cat laziness.txt
+  558  cat impatience.txt
+  559  cat hubris.txt
+  560  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  561  man ls
+  562  ls
+  563  ls -a
+  564  ls -F
+  565  lfz-staff ls
+  566  lfz-staff/ ls
+  567  ls lfz-staff/
+  568  ls -aF lfz-staff/
+  569  ls -aF lfz-staff > lfz-staff/contents.txt
+  570  cat lfz-staff/context.txt
+  571  lfz-staff/contents.txt
+  572  cat lfz-staff/contents.txt
+  573  man pwd
+  574  pwd
+  575  pwd > i-was-here-txt
+  576  ls
+  577  cat i-was-here.txt
+  578  cat i-was-here-txt
+  579  man echo
+  580  echo 'Hello, World!'
+  581  echo 'Hello, World!' > hello.txt
+  582  ls
+  583  cat hello.txt
+  584  man touch
+  585  touch tag-youre-it.txt
+  586  touch snoot/boop.txt
+  587  ls snoot/
+  588  man mkdir
+  589  mkdir parent
+  590  ls
+  591  mkdir -p parent/child/grandchild
+  592  touch parent/child/grandchild .gitkeep
+  593  touch parent/child/grandchild/.gitkeep
+  594  man mkdir
+  595  ls -a parent/child/grandchild
+  596  man mv
+  597  mv pokiemans pokemon
+  598  mv i-was-here-txt i-was-here.txt
+  599  ls
+  600  man rm
+  601  rm lol.txt
+  602  ls 
+  603  rm -r kill-me/
+  604  ls
+  605  man cp
+  606  cp and-then.txt no-and-then.txt
+  607  ls
+  608  cat and-then.txt no-and-then.txt
+  609  man history
+  610  history
+  611  history > command-history.txt
