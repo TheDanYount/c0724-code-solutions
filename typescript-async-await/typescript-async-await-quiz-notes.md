@@ -15,7 +15,7 @@ Answer the following questions in the provided markdown file before turning in t
 - How do you handle errors with `await`?
   With try and catch code blocks.
 - What do `try`, `catch` and `throw` do? When do you use them?
-  try, followed by a code block, should await a promise and then have some code to run should the promise be resolved. catch, followed by a parameter to handle a rejected promise, followed by a code block, should have some code to run given that the promise has been rejected. throw is an alternative to reject within promises.
+  try, followed by a code block, should await a promise and then have some code to run should the promise be resolved. catch, followed by a parameter to handle a rejected promise, followed by a code block, should have some code to run given that the promise has been rejected. Once you hit a throw, you move to the catch block of code.
 - What happens if you forget to use `await` on a Promise? In that case, what happens to the Promise rejection?
   It references the promise itself, rather than its resolve or reject value. Rejections wouldn't get passed along in this scenario.
 - Which style of asynchronous programming do you prefer — callbacks, `Promise.then`, or `async/await`? Why?
