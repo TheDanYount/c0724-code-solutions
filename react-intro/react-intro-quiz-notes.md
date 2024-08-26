@@ -9,7 +9,7 @@ Answer the following questions in the provided markdown file before turning in t
 - What is a React component?
   Something with HTML, CSS, and JS enough to perform a certain use. A component can be a simple as a button or as complex as an entire page.
 - How do you mount a React app (root component) to the DOM?
-  In this exercise, the main.tsx file handles mounting components to the DOM, as it will for all projects using vite.
+  In this exercise, the main.tsx file handles mounting components to the DOM, as it will for all projects using vite. This will always involve creation (of a root element) and rendering (the pushing/mounting of that which was created).
 - What are some other popular frontend frameworks?
   Vue.js and Angular.
 
