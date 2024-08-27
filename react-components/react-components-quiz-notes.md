@@ -14,7 +14,7 @@ Answer the following questions in the provided markdown file before turning in t
 3. it returns JSX
 
 - How is a component "rendered" (made visible on the browser page)?
-  It's called, and the JSX that it returns is used to create an element, which has a render method called on it to push it to the DOM.
+  --> It's called <-- , and the JSX that it returns is used to create an element, which has a render method called on it to push it to the DOM.
 
 ## Notes
 
