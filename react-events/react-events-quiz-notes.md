@@ -13,7 +13,7 @@ Answer the following questions in the provided markdown file before turning in t
 - What is the naming convention for event handlers?
   Use names in the pattern of handle[Event] e.g. handleButtonClick.
 - What is an "event handler prop"? Which component declares the prop?
-  An event handler prop is a prop that passes the event handler to a component. It is declared within a parent component.
+  An event handler prop is a prop that receives the passed event handler. It is declared within a child component, and referred to within the parent when passing the value.
 - What are some custom event handler props a component may wish to define?
   onButtonClick, onPromiseResolve, onTimeoutCompletion
 - What is the naming convention for custom event handler props?
