@@ -30,7 +30,7 @@ export function Password() {
       <input
         id="password-input"
         className="mr-2 p-1 w-[160px] border-[1px] border-black"
-        type="text"
+        type="password"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
