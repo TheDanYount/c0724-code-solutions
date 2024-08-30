@@ -12,10 +12,10 @@ type Props = {
 export function RotatingBanner({ items }: Props) {
   const [stage, setStage] = useState(0);
   function handleNext() {
-    setStage((stage + 1) % 6);
+    setStage((stage + 1) % items.length);
   }
   function handlePrev() {
-    setStage((6 + stage - 1) % 6); // I add 6 here so that stage doesn't change from 0 to -1, but rather 0 to 5 % 6, which is 5.
+    setStage((items.length + stage - 1) % items.length); // I add 6 here so that stage doesn't change from 0 to -1, but rather 0 to 5 % 6, which is 5.
   }
   function handleButtonClick(num: number) {
     setStage(num);
