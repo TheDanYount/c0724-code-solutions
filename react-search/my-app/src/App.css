@@ -1,0 +1,28 @@
+#root {
+  max-width: 1280px;
+  margin-top: 20px;
+  padding: 2rem;
+}
+
+.card {
+  padding: 2em;
+}
+
+input {
+  outline: none;
+  border: none;
+  padding: 2px;
+  vertical-align: top;
+  font-size: 18px;
+}
+
+.pseudo-search-bar {
+  border: 2px solid black;
+  border-radius: 6px;
+  height: 25px;
+  padding-right: 6px;
+}
+
+svg {
+  padding: 4px;
+}
