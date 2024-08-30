@@ -1,7 +1,7 @@
 button {
   font-size: 28px;
   padding: 10px 20px;
-  background-color: #eee;
+  background-color: #ddd;
   border: 6px solid #888;
   border-bottom-color: #444;
   border-right-color: #444;
@@ -10,5 +10,9 @@ button {
 }
 
 button:active {
-  background-color: #ccc;
+  background-color: #aaa;
+}
+
+.blue {
+  background-color: #bbf;
 }

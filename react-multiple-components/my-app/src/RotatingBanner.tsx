@@ -24,7 +24,11 @@ export function RotatingBanner({ items }: Props) {
     <>
       <Title title={items[stage]} />
       <Next onButtonClick={handleNext} />
-      <ButtonRow items={items} onButtonClick={handleButtonClick} />
+      <ButtonRow
+        items={items}
+        onButtonClick={handleButtonClick}
+        currentStage={stage}
+      />
       <Prev onButtonClick={handlePrev} />
     </>
   );
