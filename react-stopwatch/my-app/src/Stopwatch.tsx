@@ -5,8 +5,8 @@ import { FaPlay, FaPause } from 'react-icons/fa';
 
 export function Stopwatch() {
   const [time, setTime] = useState(0);
-  const [timeoutFunction, setTimeoutFunction] = useState<NodeJS.Timeout>();
-  const running = timeoutFunction !== undefined;
+  const [intervalFunction, setIntervalFunction] = useState<NodeJS.Timeout>();
+  const running = intervalFunction !== undefined;
 
   return (
     <>
@@ -22,14 +22,14 @@ export function Stopwatch() {
       {running ? (
         <FaPause
           onClick={() => {
-            clearInterval(timeoutFunction);
-            setTimeoutFunction(undefined);
+            clearInterval(intervalFunction);
+            setIntervalFunction(undefined);
           }}
         />
       ) : (
         <FaPlay
           onClick={() => {
-            setTimeoutFunction(
+            setIntervalFunction(
               setInterval(() => setTime((prev) => prev + 1), 1000)
             );
           }}
