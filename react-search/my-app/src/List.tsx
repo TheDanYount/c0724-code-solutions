@@ -4,8 +4,8 @@ type Props = {
 };
 
 export function List({ quotes, searchTerm }: Props) {
-  const matchedStrings = quotes.filter(
-    (str) => !!str.toLowerCase().match(searchTerm.toLowerCase())
+  const matchedStrings = quotes.filter((str) =>
+    str.toLowerCase().match(searchTerm.toLowerCase())
   );
   return (
     <>
