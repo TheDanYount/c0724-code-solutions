@@ -11,12 +11,21 @@ type Props = {
 
 export function RotatingBanner({ items }: Props) {
   const [stage, setStage] = useState(0);
+  function handleNext() {
+    setStage((stage + 1) % 6);
+  }
+  function handlePrev() {
+    setStage((6 + stage - 1) % 6); // I add 6 here so that stage doesn't change from 0 to -1, but rather 0 to 5 % 6, which is 5.
+  }
+  function handleButtonClick(num: number) {
+    setStage(num);
+  }
   return (
     <>
       <Title title={items[stage]} />
-      <Next />
-      <ButtonRow items={items} />
-      <Prev />
+      <Next onButtonClick={handleNext} />
+      <ButtonRow items={items} onButtonClick={handleButtonClick} />
+      <Prev onButtonClick={handlePrev} />
     </>
   );
 }
