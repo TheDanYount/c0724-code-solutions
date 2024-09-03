@@ -12,7 +12,7 @@ type Props = {
 };
 
 export function Accordion({ topics }: Props) {
-  const [currentTopicId, setCurrentTopicId] = useState<null | number>(null);
+  const [currentTopicId, setCurrentTopicId] = useState();
 
   return (
     <div className="max-w-[450px] m-auto mt-[20px] align-middle">
@@ -20,14 +20,12 @@ export function Accordion({ topics }: Props) {
       {topics.map((obj) => (
         <TopicCard
           key={obj.id}
-          id={obj.id}
-          title={obj.title}
-          content={obj.content}
-          currentTopicId={currentTopicId}
-          onTitleClick={(num) =>
-            currentTopicId !== num
-              ? setCurrentTopicId(num)
-              : setCurrentTopicId(null)
+          obj={obj}
+          display={obj.id === currentTopicId}
+          onTitleClick={() =>
+            obj.id !== currentTopicId
+              ? setCurrentTopicId(obj.id)
+              : setCurrentTopicId(undefined)
           }
         />
       ))}
