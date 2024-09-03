@@ -1,29 +1,30 @@
 type Props = {
+  id: number;
   title: string;
   content: string;
-  currentTopic: string;
-  onTitleClick: (str: string) => void;
+  currentTopicId: number | null;
+  onTitleClick: (num: number) => void;
 };
 
 export function TopicCard({
+  id,
   title,
   content,
-  currentTopic,
+  currentTopicId,
   onTitleClick,
 }: Props) {
+  console.log('currentTopicId', currentTopicId);
+  console.log('key', id);
   return (
     <>
       <h2
-        onClick={() => onTitleClick(title)}
+        onClick={() => onTitleClick(id)}
         className="my-[-1px] border-2 border-black bg-[#ddd]">
         {title}
       </h2>
-      <p
-        className={`my-[-1px] border-2 border-black ${
-          currentTopic === title ? '' : 'hidden'
-        }`}>
-        {content}
-      </p>
+      {currentTopicId === id && (
+        <p className="my-[-1px] border-2 border-black">{content}</p>
+      )}
     </>
   );
 }
