@@ -17,7 +17,7 @@ export function Carousel({ imgRefs }: Prop) {
         setState((state + 1) % imgRefs.length);
       }, 3000)
     );
-    return clearTimeout(timer);
+    return () => clearTimeout(timer);
   }, [state]);
   return (
     <>
