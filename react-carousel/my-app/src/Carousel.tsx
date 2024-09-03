@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { Image } from './Image';
+import { PrevButton } from './PrevButton';
+import { NextButton } from './NextButton';
 
 type Prop = {
   imgRefs: string[];
@@ -19,26 +21,26 @@ export function Carousel({ imgRefs }: Prop) {
   }, [state]);
   return (
     <>
-      <Image source={imgRefs[state]} />
-      <div>
+      <div className="flex justify-between items-center w-80">
+        <PrevButton
+          onButtonClick={() =>
+            setState((state - 1 + imgRefs.length) % imgRefs.length)
+          }
+        />
+        <Image source={imgRefs[state]} />
+        <NextButton
+          onButtonClick={() => setState((state + 1) % imgRefs.length)}
+        />
+      </div>
+      <div className="flex justify-center">
         {imgRefs.map((element, index) => (
           <Button
             key={`b${index}`}
-            text={String(index)}
             onButtonClick={() => setState(index)}
+            stateMatch={state === index}
           />
         ))}
       </div>
-      <Button
-        text={'Prev'}
-        onButtonClick={() =>
-          setState((state - 1 + imgRefs.length) % imgRefs.length)
-        }
-      />
-      <Button
-        text={'Next'}
-        onButtonClick={() => setState((state + 1) % imgRefs.length)}
-      />
     </>
   );
 }

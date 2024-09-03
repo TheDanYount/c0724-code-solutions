@@ -1,8 +1,14 @@
+import { FaCircle, FaRegCircle } from 'react-icons/fa';
+
 type Props = {
-  text: string;
   onButtonClick: () => void;
+  stateMatch: boolean;
 };
 
-export function Button({ text, onButtonClick }: Props) {
-  return <button onClick={onButtonClick}>{text}</button>;
+export function Button({ onButtonClick, stateMatch }: Props) {
+  return stateMatch ? (
+    <FaCircle onClick={onButtonClick} />
+  ) : (
+    <FaRegCircle onClick={onButtonClick} />
+  );
 }
