@@ -10,15 +10,12 @@ type Prop = {
 
 export function Carousel({ imgRefs }: Prop) {
   const [state, setState] = useState(0);
-  const [timer, setTimer] = useState<NodeJS.Timeout>();
   useEffect(() => {
-    setTimer(
-      setTimeout(() => {
-        setState((state + 1) % imgRefs.length);
-      }, 3000)
-    );
+    const timer = setTimeout(() => {
+      setState((state + 1) % imgRefs.length);
+    }, 3000);
     return () => clearTimeout(timer);
-  }, [state]);
+  }, [state, imgRefs.length]);
   return (
     <>
       <div className="flex justify-between items-center w-80">
@@ -33,7 +30,7 @@ export function Carousel({ imgRefs }: Prop) {
         />
       </div>
       <div className="flex justify-center">
-        {imgRefs.map((element, index) => (
+        {imgRefs.map((_, index) => (
           <Button
             key={`b${index}`}
             onButtonClick={() => setState(index)}
