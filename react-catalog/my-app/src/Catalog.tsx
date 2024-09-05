@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { readCatalog } from './read';
 import { type Product } from './data';
 import { Link } from 'react-router-dom';
+import { toDollars } from './to-dollars';
 
 export function Catalog() {
   const [products, setProducts] = useState<Product[]>();
@@ -11,7 +12,7 @@ export function Catalog() {
         const catalog = await readCatalog();
         setProducts(catalog);
       } catch (error) {
-        console.error(error);
+        alert(error);
       }
     }
     productCall();
@@ -36,7 +37,7 @@ function ItemCard({ product }: ItemCardProp) {
   return (
     <Link
       to={`details/${product.productId}`}
-      className="mx-8 my-4 w-[240px] h-[380px] border-2 rounded-lg">
+      className="m-4 w-[240px] h-[380px] border-2 rounded-lg">
       <div className="w-[236px] h-[236px] flex justify-center items-center">
         <img
           src={product.imageUrl}
@@ -44,9 +45,9 @@ function ItemCard({ product }: ItemCardProp) {
       </div>
       <div className="m-4">
         <h3 className="text-[14px] font-semibold">{product.name}</h3>
-        <h6 className="text-gray-400 text-[12px] font-semibold">{`$${String(
-          product.price
-        ).slice(0, -2)}.${String(product.price).slice(-2)}`}</h6>
+        <h6 className="text-gray-400 text-[12px] font-semibold">
+          {toDollars(product.price)}
+        </h6>
         <p className="text-[12px]">{product.shortDescription}</p>
       </div>
     </Link>
