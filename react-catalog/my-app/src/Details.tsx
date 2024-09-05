@@ -14,11 +14,13 @@ export function Details() {
         const currentProduct = await readProduct(Number(productId));
         setProduct(currentProduct);
       } catch (error) {
-        alert(error);
+        console.error(error);
+        alert('Error. Click "OK" to return to catalog');
+        navigate('/');
       }
     }
     productCall();
-  }, [productId]);
+  }, [productId, navigate]);
 
   function handleAddToCart() {
     alert(`Added ${product?.name} to cart`);

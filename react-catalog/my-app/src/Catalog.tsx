@@ -12,19 +12,29 @@ export function Catalog() {
         const catalog = await readCatalog();
         setProducts(catalog);
       } catch (error) {
-        alert(error);
+        console.error(error);
+        alert('Error. Click "OK" to reload catalog');
+        setProducts(undefined); // this will force a re-render
       }
     }
     productCall();
   }, [products]);
   return (
     <>
-      <h1 className="border-b-2 w-full text-[40px] font-semibold">Catalog</h1>
-      <div className="flex flex-wrap">
-        {products?.map((product) => (
-          <ItemCard key={product.productId} product={product} />
-        ))}
-      </div>
+      {products ? (
+        <>
+          <h1 className="border-b-2 w-full text-[40px] font-semibold">
+            Catalog
+          </h1>
+          <div className="flex flex-wrap">
+            {products?.map((product) => (
+              <ItemCard key={product.productId} product={product} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
     </>
   );
 }
