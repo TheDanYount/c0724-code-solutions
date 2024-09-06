@@ -7,7 +7,10 @@ type Prop = {
 };
 
 export function Modal({ children, isOpen, onClose }: Prop) {
-  useEffect(() => (isOpen ? modal.current?.show() : modal.current?.close()));
+  useEffect(
+    () => (isOpen ? modal.current?.show() : modal.current?.close()),
+    [isOpen]
+  );
   const modal = useRef<HTMLDialogElement>(null);
   return (
     <dialog ref={modal} onClose={onClose}>
