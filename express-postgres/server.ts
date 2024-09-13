@@ -43,7 +43,7 @@ app.get('/api/film', async (req, res, next) => {
     `;
     const params = [filmId];
     const result = await db.query(sql, params);
-    const actors = result.rows;
+    const actors = result.rows[0];
     res.send(actors);
   } catch (err) {
     next(err);
@@ -53,6 +53,9 @@ app.get('/api/film', async (req, res, next) => {
 app.put('/api/film', async (req, res, next) => {
   try {
     const { filmId, title } = req.query;
+    if (filmId === undefined || title === undefined) {
+      throw new ClientError(400, 'both a filmId and a title are required');
+    }
     const sql = `
       update
         "films"
