@@ -19,7 +19,7 @@ app.post('/api/actors', async (req, res, next) => {
   try {
     const { firstName, lastName } = req.body;
     if (firstName === undefined || lastName === undefined) {
-      res.sendStatus(400);
+      throw new ClientError(400, 'Bad request');
     }
     const sql = `
     insert into
@@ -46,7 +46,7 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
       lastName === undefined ||
       !Number.isInteger(+actorId)
     ) {
-      res.sendStatus(400);
+      throw new ClientError(400, 'Bad request');
     }
     const sql = `
     update
@@ -59,7 +59,7 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
     const params = [firstName, lastName, actorId];
     const result = await db.query(sql, params);
     if (result.rowCount === 0) {
-      res.sendStatus(404);
+      throw new ClientError(404, 'Not found');
     }
     const updatedActor = result.rows[0];
     res.status(200).json(updatedActor);
@@ -71,10 +71,8 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
 app.delete('/api/actors/:actorId', async (req, res, next) => {
   try {
     const { actorId } = req.params;
-    console.log(actorId);
-    console.log(typeof actorId);
     if (!Number.isInteger(+actorId)) {
-      res.sendStatus(400);
+      throw new ClientError(400, 'Bad request');
     }
     const sql = `
     delete
@@ -85,10 +83,9 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
     const params = [actorId];
     const result = await db.query(sql, params);
     if (result.rowCount === 0) {
-      res.sendStatus(404);
+      throw new ClientError(404, 'Not found');
     }
-    const deletedActor = result.rows[0];
-    res.status(204).json(deletedActor);
+    res.sendStatus(204);
   } catch (err) {
     next(err);
   }
