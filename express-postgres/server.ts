@@ -21,8 +21,8 @@ app.get('/api/films', async (req, res, next) => {
       order by "replacementCost" desc
     `;
     const result = await db.query(sql);
-    const actors = result.rows;
-    res.send(actors);
+    const films = result.rows;
+    res.send(films);
   } catch (err) {
     next(err);
   }
@@ -43,8 +43,8 @@ app.get('/api/film', async (req, res, next) => {
     `;
     const params = [filmId];
     const result = await db.query(sql, params);
-    const actors = result.rows[0];
-    res.send(actors);
+    const film = result.rows[0];
+    res.send(film);
   } catch (err) {
     next(err);
   }
@@ -65,8 +65,8 @@ app.put('/api/film', async (req, res, next) => {
     `;
     const params = [filmId, title];
     const result = await db.query(sql, params);
-    const actors = result.rows;
-    res.send(actors);
+    const film = result.rows[0];
+    res.send(film);
   } catch (err) {
     next(err);
   }
