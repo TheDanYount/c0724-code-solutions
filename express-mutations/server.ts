@@ -19,7 +19,10 @@ app.post('/api/actors', async (req, res, next) => {
   try {
     const { firstName, lastName } = req.body;
     if (firstName === undefined || lastName === undefined) {
-      throw new ClientError(400, 'Bad request');
+      throw new ClientError(
+        400,
+        `Both a first name and a last name are required.`
+      );
     }
     const sql = `
     insert into
@@ -31,7 +34,7 @@ app.post('/api/actors', async (req, res, next) => {
     const params = [firstName, lastName];
     const result = await db.query(sql, params);
     const newActor = result.rows[0];
-    res.status(201).json(newActor);
+    res.sendStatus(201).json(newActor);
   } catch (err) {
     next(err);
   }
@@ -46,7 +49,10 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
       lastName === undefined ||
       !Number.isInteger(+actorId)
     ) {
-      throw new ClientError(400, 'Bad request');
+      throw new ClientError(
+        400,
+        'A first name, last name, and valid actorId are required'
+      );
     }
     const sql = `
     update
@@ -59,7 +65,7 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
     const params = [firstName, lastName, actorId];
     const result = await db.query(sql, params);
     if (result.rowCount === 0) {
-      throw new ClientError(404, 'Not found');
+      throw new ClientError(404, `No actor found for actorId:${actorId}.`);
     }
     const updatedActor = result.rows[0];
     res.status(200).json(updatedActor);
@@ -72,7 +78,7 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
   try {
     const { actorId } = req.params;
     if (!Number.isInteger(+actorId)) {
-      throw new ClientError(400, 'Bad request');
+      throw new ClientError(400, 'A valid actorId is required.');
     }
     const sql = `
     delete
@@ -83,7 +89,7 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
     const params = [actorId];
     const result = await db.query(sql, params);
     if (result.rowCount === 0) {
-      throw new ClientError(404, 'Not found');
+      throw new ClientError(404, `No actor found for actorId:${actorId}.`);
     }
     res.sendStatus(204);
   } catch (err) {
