@@ -20,8 +20,8 @@ export function UserDetails({ userId, onCancel }: Props) {
         );
         if (!result.ok)
           throw new Error('could not fetch userData from clicked user');
-        const formattedResult = (await result.json()) as Promise<User>;
-        setUser(await formattedResult);
+        const formattedResult = (await result.json()) as User;
+        setUser(formattedResult);
       } catch (err) {
         setError(err);
       } finally {

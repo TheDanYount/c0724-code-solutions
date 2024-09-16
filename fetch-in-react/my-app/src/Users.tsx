@@ -25,8 +25,8 @@ export function Users() {
           'https://jsonplaceholder.typicode.com/users'
         );
         if (!result.ok) throw new Error('initial users fetch failed');
-        const formattedResult = (await result.json()) as Promise<User[]>;
-        setUsers(await formattedResult);
+        const formattedResult = (await result.json()) as User[];
+        setUsers(formattedResult);
       } catch (err) {
         setError(err);
       } finally {
