@@ -47,9 +47,7 @@ export function Todos() {
       });
       if (!todoAddResult.ok) throw new Error('add todo failed');
       const formattedResult = (await todoAddResult.json()) as Todo;
-      const todosCopy = todos.slice();
-      todosCopy.push(formattedResult);
-      setTodos(todosCopy);
+      setTodos([...todos, formattedResult]);
     } catch (err) {
       setError(err);
     }
@@ -67,9 +65,7 @@ export function Todos() {
         body: JSON.stringify(todo),
       });
       if (!todoUpdateResult.ok) throw new Error('update todo failed');
-      const newTodos = todos.map((e) => {
-        return e.todoId === todo.todoId ? todo : e;
-      });
+      const newTodos = todos.map((e) => (e.todoId === todo.todoId ? todo : e));
       setTodos(newTodos);
     } catch (err) {
       setError(err);
