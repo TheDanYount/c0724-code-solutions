@@ -5,19 +5,20 @@ import { toDollars } from './to-dollars';
 
 export function Details() {
   const [product, setProduct] = useState<Product>();
+  const [isLoading, setIsLoading] = useState(true);
   const { productId } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
     async function productCall() {
       try {
         const currentProduct = await fetch(`/api/products/${productId}`);
-        console.log(currentProduct);
         if (!currentProduct.ok)
           throw new Error(
             `could not fetch product from productId: ${productId}`
           );
         const formattedResult = (await currentProduct.json()) as Product;
         setProduct(formattedResult);
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
         alert('Error. Click "OK" to return to catalog');
@@ -34,7 +35,7 @@ export function Details() {
 
   return (
     <>
-      {product ? (
+      {!isLoading ? (
         <>
           <div className="flex flex-col border-2 rounded-b-lg p-4">
             <Link to="/" className="self-start">

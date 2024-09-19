@@ -5,6 +5,8 @@ import { toDollars } from './to-dollars';
 
 export function Catalog() {
   const [products, setProducts] = useState<Product[]>();
+  const [isLoading, setIsLoading] = useState<boolean | undefined>(true);
+  const [toggleToCauseNewFetch, setToggleToCauseNewFetch] = useState(false);
   useEffect(() => {
     async function productCall() {
       try {
@@ -12,17 +14,18 @@ export function Catalog() {
         if (!catalog.ok) throw new Error('catalog fetch failed');
         const formattedResult = (await catalog.json()) as Product[];
         setProducts(formattedResult);
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
         alert('Error. Click "OK" to reload catalog');
-        setProducts(undefined); // this will force a re-render
+        setToggleToCauseNewFetch(!toggleToCauseNewFetch);
       }
     }
     productCall();
-  }, []);
+  }, [toggleToCauseNewFetch]);
   return (
     <>
-      {products ? (
+      {!isLoading ? (
         <>
           <h1 className="border-b-2 w-full text-[40px] font-semibold">
             Catalog
