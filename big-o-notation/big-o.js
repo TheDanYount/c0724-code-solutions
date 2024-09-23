@@ -5,14 +5,14 @@ function uniqueLinear(words) {
   const unique = []; // 1 * 1 = O(1)
   for (
     let i = 0; // 1 * 1 = O(1)
-    i < words.length; // 2 * n = O(2n)
+    i < words.length; // 2 * n = O(n)
     i++ // 1 * n = O(n)
   ) {
-    const word = words[i]; // 1 * 1 = O(1)
+    const word = words[i]; // 1 * n= O(n)
     if (!seen[word]) {
       // 2 * n = O(2n)
-      seen[word] = true; // 2 * n = O(2n)
-      unique[unique.length] = word; // 3 * n = O(3n)
+      seen[word] = true; // 2 * n = O(n)
+      unique[unique.length] = word; // 3 * n = O(n)
     }
   }
   return unique; // 1 * 1 = O(1)
@@ -22,17 +22,17 @@ function uniqueQuadratic(words) {
   const unique = []; // 1 * 1 = O(1)
   for (
     let i = 0; // 1 * 1 = O(1)
-    i < words.length; // 2 * n = O(2n)
+    i < words.length; // 2 * n = O(n)
     i++ // 1 * n = O(n)
   ) {
-    const word = words[i]; // 2 * n = O(2n)
+    const word = words[i]; // 2 * n = O(n)
     let isUnique = true; // 1 * n = O(n)
     for (
       let c = 0; // 1 * n = O(n)
       c < i; // 1 * n^2 = O(n^2)
       c++ // 1 * n^2 = O(n^2)
     ) {
-      const comparing = words[c]; // 2 * n^2 = O(2n^2)
+      const comparing = words[c]; // 2 * n^2 = O(n^2)
       if (comparing === word) {
         // 1 * n^2 = O(n^2)
         isUnique = false; // 1 * n^2 = O(n^2)
@@ -40,7 +40,7 @@ function uniqueQuadratic(words) {
     }
     if (isUnique) {
       // 1 * n = O(n)
-      unique[unique.length] = word; // 3 * n = O(3n)
+      unique[unique.length] = word; // 3 * n = O(n)
     }
   }
   return unique; // 1 * 1 = O(1)
