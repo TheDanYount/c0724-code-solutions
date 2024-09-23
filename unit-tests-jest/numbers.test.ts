@@ -78,4 +78,16 @@ describe('multiplyBy', () => {
     const result = functions.multiplyBy(obj, multiplier);
     expect(result).toEqual({});
   });
+  it('returns the original object', () => {
+    const obj = {
+      firstName: 'Bob',
+      fakeNum: '5',
+      zeroEquivalent: null,
+      num: 10,
+      secondNum: 20,
+    };
+    const multiplier = 2;
+    const result = functions.multiplyBy(obj, multiplier);
+    expect(result).toBe(obj);
+  });
 });
