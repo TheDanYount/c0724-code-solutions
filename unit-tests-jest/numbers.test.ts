@@ -32,13 +32,6 @@ describe('toDollars', () => {
 });
 
 describe('divideBy', () => {
-  it('does not modify the original input array', () => {
-    const inputArray = [1, 2, 3];
-    const inputDivisor = 2;
-    const inpuArrayCopy = [...inputArray];
-    functions.divideBy(inputArray, inputDivisor);
-    expect(inputArray).toEqual(inpuArrayCopy);
-  });
   it('returns an array of numbers divided by the divisor', () => {
     const inputArray = [-1, 0, 2.05, 3];
     const inputDivisor = 2;
@@ -50,6 +43,13 @@ describe('divideBy', () => {
     const inputDivisor = 2;
     const result = functions.divideBy(inputArray, inputDivisor);
     expect(result).toEqual([]);
+  });
+  it('does not modify the original input array', () => {
+    const inputArray = [1, 2, 3];
+    const inputDivisor = 2;
+    const inpuArrayCopy = [...inputArray];
+    functions.divideBy(inputArray, inputDivisor);
+    expect(inputArray).toEqual(inpuArrayCopy);
   });
 });
 
